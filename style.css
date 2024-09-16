@@ -76,8 +76,28 @@ input:focus {
 button {
     padding: 10px 20px;
     background-color: #007bff;
-    co
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Error message styles */
+#error-message {
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+/* Stripe Element styling */
+#card-element {
+    margin-bottom: 20px;
+}
 
 /* Load the font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
