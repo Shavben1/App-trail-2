@@ -1,38 +1,135 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
     text-align: center;
-    padding: 50px;
+    padding: 0;
 }
 
 .container {
-    background-color: #fff;
+    max-width: 800px;
+    margin: 50px auto;
     padding: 20px;
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-input {
-    width: 80%;
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #343a40;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #495057;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+/* Header */
+header {
+    padding: 20px;
+    background-color: #343a40;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Input and Button */
+input[type="text"] {
+    width: calc(100% - 22px);
     padding: 10px;
     margin: 10px 0;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
 button {
     padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #007bff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #0056b3;
 }
 
+/* Form */
+form {
+    margin: 20px 0;
+}
+
+#card-element {
+    margin-bottom: 20px;
+}
+
+/* Error Message */
+#error-message {
+    color: #dc3545;
+    margin-top: 10px;
+}
+
+/* Recipe Suggestions */
 #suggestions {
     margin-top: 20px;
+    text-align: left;
+}
+
+#suggestions img {
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    padding: 10px;
+    background-color: #343a40;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Success Page */
+.success-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.success-container h1 {
+    color: #28a745;
+    font-size: 2.5rem;
+}
+
+.success-container p {
+    color: #6c757d;
+    font-size: 1.25rem;
 }
