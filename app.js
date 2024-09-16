@@ -1,20 +1,39 @@
-function suggestMeals() {
+// Replace this with your own Spoonacular API Key
+const apiKey = "YOUR_API_KEY_HERE";
+
+async function suggestMeals() {
     // Get the ingredients entered by the user
     let ingredients = document.getElementById("ingredientsInput").value.toLowerCase();
 
-    // Some simple meal suggestions based on ingredients
-    let meals = {
-        "chicken, tomato, cheese": "Chicken Parmesan",
-        "bread, peanut butter, jelly": "Peanut Butter & Jelly Sandwich",
-        "rice, chicken, broccoli": "Chicken and Rice Stir Fry",
-        "pasta, tomato sauce, garlic": "Spaghetti with Tomato Sauce",
-        "egg, bread, cheese": "Egg Sandwich",
-        "potato, cheese, bacon": "Loaded Baked Potato",
-    };
+    // Make sure the user enters something
+    if (!ingredients) {
+        document.getElementById("suggestions").innerText = "Please enter some ingredients!";
+        return;
+    }
 
-    // Check if the ingredients match a meal in the list
-    let suggestion = meals[ingredients] || "Sorry, no meal suggestions for those ingredients.";
+    // URL to fetch recipes from Spoonacular API
+    let apiURL = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients}&number=3&apiKey=${apiKey}`;
 
-    // Display the suggestion on the page
-    document.getElementById("suggestions").innerText = suggestion;
+    try {
+        // Fetch data from Spoonacular API
+        let response = await fetch(apiURL);
+        let recipes = await response.json();
+
+        // If no recipes are found
+        if (recipes.length === 0) {
+            document.getElementById("suggestions").innerText = "Sorry, no meals found for those ingredients.";
+            return;
+        }
+
+        // Display the meal suggestions
+        let suggestions = "";
+        recipes.forEach(recipe => {
+            suggestions += `<p><strong>${recipe.title}</strong><br><img src="${recipe.image}" alt="${recipe.title}" width="100"></p>`;
+        });
+
+        document.getElementById("suggestions").innerHTML = suggestions;
+
+    } catch (error) {
+        document.getElementById("suggestions").innerText = "Error fetching meal suggestions. Please try again.";
+    }
 }
