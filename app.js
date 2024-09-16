@@ -1,5 +1,5 @@
 // Replace this with your own Spoonacular API Key
-const apiKey = "YOUR_API_KEY_HERE";
+const apiKey = "7cc593dcb8ab41d09fcfc66899f02896";
 
 async function suggestMeals() {
     // Get the ingredients entered by the user
