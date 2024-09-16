@@ -26,3 +26,34 @@
     <script src="app.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Suggestion App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Add the logo here -->
+        <div class="logo">Kitchen Genie</div>
+        
+        <h1>What's in Your Kitchen?</h1>
+        <p>Enter the ingredients you have, and I'll suggest a meal!</p>
+        
+        <!-- Input box for ingredients -->
+        <input type="text" id="ingredientsInput" placeholder="e.g. chicken, tomato, cheese">
+        
+        <!-- Button to get suggestions -->
+        <button onclick="suggestMeals()">Suggest Meals</button>
+
+        <!-- Space to display the suggested meals -->
+        <h2>Meal Suggestions:</h2>
+        <div id="suggestions"></div>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="app.js"></script>
+</body>
+</html>
