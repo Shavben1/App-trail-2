@@ -82,3 +82,21 @@ footer {
     color: #FFFFFF;
     border-radius: 4px;
 }
+
+/* Custom font for logo */
+@font-face {
+    font-family: 'KitchenGenie';
+    src: url('fonts/kitchen-genie.woff2') format('woff2'),
+         url('fonts/kitchen-genie.woff') format('woff'),
+         url('fonts/kitchen-genie.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.logo {
+    font-family: 'KitchenGenie', sans-serif;
+    font-size: 3rem; /* Adjust size as needed */
+    color: #007BFF; /* Logo color */
+    text-align: center;
+    margin-bottom: 30px;
+}
