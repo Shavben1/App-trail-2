@@ -3,42 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mealify</title>
+    <title>Kitchen Genie</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="hero">
-        <div class="overlay">
-            <div class="hero-text">
-                <h1>Welcome to Mealify</h1>
-                <p>Cook smart, reduce waste, enjoy every bite!</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="info">
-        <h2>Simplify Meal Planning</h2>
-        <p>Simplifying meal planning while combating food waste, one delicious dish at a time.</p>
-    </div>
-
-    <div class="subscribe">
-        <h2>Get an update</h2>
-        <p>Stay updated on our latest meal planning features and recipes!</p>
-        <input type="email" placeholder="Enter your email">
-        <button>Sign Up</button>
-    </div>
-
     <div class="container">
-        <h2>What's in Your Kitchen?</h2>
-        <p>Enter your ingredients below:</p>
-
-        <input type="text" id="ingredientsInput" placeholder="e.g., chicken, tomato, cheese">
-        <button onclick="suggestMeals()">Find Recipes</button>
-
-        <h2>Suggested Meals:</h2>
+        <h1>What's in Your Kitchen?</h1>
+        <p>Enter the ingredients you have, and I'll suggest a meal!</p>
+        <!-- Input box for ingredients -->
+        <input type="text" id="ingredientsInput" placeholder="e.g. chicken, tomato, cheese">
+        <!-- Button to get suggestions -->
+        <button onclick="suggestMeals()">Suggest Meals</button>
+        <!-- Space to display the suggested meals -->
+        <h2>Meal Suggestions:</h2>
         <div id="suggestions"></div>
     </div>
-
+    <!-- Link to JavaScript file -->
     <script src="app.js"></script>
 </body>
 </html>
