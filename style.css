@@ -1,80 +1,123 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f2f2f2;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
     color: #333;
     padding: 20px;
 }
 
-header {
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: #fafafa;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 2.5em;
+    color: #7B4A12;
+}
+
+.hero-text p {
+    font-size: 1.5em;
+    color: #6C757D;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Info Section */
+.info {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 50px 0;
 }
 
-header h1 {
-    font-size: 36px;
-    color: #4CAF50;
+.info h2 {
+    color: #7B4A12;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
+.info p {
+    font-size: 1.2em;
+    color: #6C757D;
+}
+
+/* Subscription Section */
+.subscribe {
     text-align: center;
+    margin: 50px 0;
 }
 
-input[type="text"] {
-    width: 80%;
-    padding: 12px;
+.subscribe input {
+    padding: 10px;
+    font-size: 1em;
+    margin-right: 10px;
+    border: 1px solid #CED4DA;
     border-radius: 4px;
-    border: 1px solid #ccc;
 }
 
-button {
-    padding: 12px 20px;
-    background-color: #4CAF50;
+.subscribe button {
+    padding: 10px 20px;
+    background-color: #7B4A12;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #45a049;
+.subscribe button:hover {
+    background-color: #5A3810;
 }
 
-.suggestions-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.meal-card {
+/* Meal Suggestions */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
     background-color: white;
-    padding: 15px;
-    margin: 10px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.meal-image {
-    width: 100%;
+.container h2 {
+    color: #7B4A12;
+    margin-bottom: 20px;
+}
+
+.container input, 
+.container button {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #CED4DA;
     border-radius: 4px;
 }
 
-.meal-info {
-    margin-top: 10px;
+.container button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-footer {
-    margin-top: 30px;
-    text-align: center;
-    color: #666;
+.container button:hover {
+    background-color: #0056b3;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 4px;
 }
