@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kitchen Genie</title>
+    <title>Mealify Suggestion</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>What's in Your Kitchen?</h1>
-        <p>Enter the ingredients you have, and I'll suggest a meal!</p>
-        
-        <!-- Input box for ingredients -->
+    <header>
+        <h1>Mealify - What’s Cooking?</h1>
+    </header>
+
+    <main class="container">
+        <p>Enter ingredients, and we’ll suggest a recipe!</p>
         <input type="text" id="ingredientsInput" placeholder="e.g. chicken, tomato, cheese">
-        
-        <!-- Button to get suggestions -->
-        <button onclick="suggestMeals()">Suggest Meals</button>
+        <button onclick="suggestMeals()">Get Recipes</button>
 
-        <!-- Space to display the suggested meals -->
         <h2>Meal Suggestions:</h2>
-        <div id="suggestions"></div>
-    </div>
+        <div id="suggestions" class="suggestions-container"></div>
+    </main>
 
-    <!-- Link to JavaScript file -->
+    <footer>
+        <p>&copy; 2024 Mealify</p>
+    </footer>
+
     <script src="app.js"></script>
 </body>
 </html>
