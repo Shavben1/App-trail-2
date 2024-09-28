@@ -1,39 +1,42 @@
-// Replace this with your own Spoonacular API Key
 const apiKey = "7cc593dcb8ab41d09fcfc66899f02896";
 
 async function suggestMeals() {
-    // Get the ingredients entered by the user
-    let ingredients = document.getElementById("ingredientsInput").value.toLowerCase();
+    let ingredients = document.getElementById("ingredientsInput").value.toLowerCase().trim();
 
-    // Make sure the user enters something
     if (!ingredients) {
-        document.getElementById("suggestions").innerText = "Please enter some ingredients!";
+        displayMessage("Please enter some ingredients!", "error");
         return;
     }
 
-    // URL to fetch recipes from Spoonacular API
-    let apiURL = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients}&number=3&apiKey=${apiKey}`;
+    let apiURL = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients}&number=5&apiKey=${apiKey}`;
 
     try {
-        // Fetch data from Spoonacular API
         let response = await fetch(apiURL);
         let recipes = await response.json();
 
-        // If no recipes are found
         if (recipes.length === 0) {
-            document.getElementById("suggestions").innerText = "Sorry, no meals found for those ingredients.";
+            displayMessage("Sorry, no meals found for those ingredients.", "error");
             return;
         }
 
-        // Display the meal suggestions
-        let suggestions = "";
-        recipes.forEach(recipe => {
-            suggestions += `<p><strong>${recipe.title}</strong><br><img src="${recipe.image}" alt="${recipe.title}" width="100"></p>`;
-        });
-
-        document.getElementById("suggestions").innerHTML = suggestions;
-
+        displayRecipes(recipes);
     } catch (error) {
-        document.getElementById("suggestions").innerText = "Error fetching meal suggestions. Please try again.";
+        displayMessage("Error fetching meal suggestions. Please try again.", "error");
     }
+}
+
+function displayMessage(message, type) {
+    let suggestionsDiv = document.getElementById("suggestions");
+    suggestionsDiv.innerHTML = `<p class="${type}">${message}</p>`;
+}
+
+function displayRecipes(recipes) {
+    let suggestionsDiv = document.getElementById("suggestions");
+    suggestionsDiv.innerHTML = recipes.map(recipe => `
+        <div class="recipe">
+            <h3>${recipe.title}</h3>
+            <img src="${recipe.image}" alt="${recipe.title}" width="150">
+            <p><a href="https://spoonacular.com/recipes/${recipe.id}" target="_blank">View Recipe</a></p>
+        </div>
+    `).join('');
 }
