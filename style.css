@@ -10,35 +10,41 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f9f9f9;
     color: #333;
-    padding: 20px;
+    padding: 0;
 }
 
 /* Hero Section */
 .hero {
+    height: 80vh;
+    background: url('hero-bg.jpg') center/cover no-repeat;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 50px;
-    background-color: #fafafa;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-text {
-    max-width: 50%;
+    color: white;
+    text-align: center;
+    z-index: 1;
 }
 
 .hero-text h1 {
-    font-size: 2.5em;
-    color: #7B4A12;
+    font-size: 3em;
+    margin-bottom: 20px;
 }
 
 .hero-text p {
     font-size: 1.5em;
-    color: #6C757D;
-}
-
-.hero-image img {
-    max-width: 100%;
-    border-radius: 10px;
 }
 
 /* Info Section */
@@ -49,6 +55,7 @@ body {
 
 .info h2 {
     color: #7B4A12;
+    font-size: 2.5em;
 }
 
 .info p {
@@ -94,30 +101,4 @@ body {
 }
 
 .container h2 {
-    color: #7B4A12;
-    margin-bottom: 20px;
-}
-
-.container input, 
-.container button {
-    padding: 15px;
-    margin: 10px 0;
-    border: 1px solid #CED4DA;
-    border-radius: 4px;
-}
-
-.container button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.container button:hover {
-    background-color: #0056b3;
-}
-
-img {
-    max-width: 100%;
-    border-radius: 4px;
-}
+    color: #7B
