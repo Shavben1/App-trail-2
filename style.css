@@ -1,104 +1,109 @@
-/* Reset */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Genie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>What's in Your Kitchen?</h1>
+        <p>Enter the ingredients you have, and I'll suggest a meal!</p>
+        <!-- Input box for ingredients -->
+        <input type="text" id="ingredientsInput" placeholder="e.g. chicken, tomato, cheese">
+        <!-- Button to get suggestions -->
+        <button onclick="suggestMeals()">Suggest Meals</button>
+        <!-- Space to display the suggested meals -->
+        <h2>Meal Suggestions:</h2>
+        <div id="suggestions"></div>
+    </div>
+    <!-- Link to JavaScript file -->
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+style.css: 
+
+/* Reset some default browser styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
+/* Basic styling for the whole page */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F8F9FA;
+    color: #343A40;
+    line-height: 1.6;
+    padding: 20px;
 }
 
-/* Hero Section */
-.hero {
-    height: 80vh;
-    background: url('hero-bg.jpg') center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.hero-text {
-    color: white;
-    text-align: center;
-    z-index: 1;
-}
-
-.hero-text h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    font-size: 1.5em;
-}
-
-/* Info Section */
-.info {
-    text-align: center;
-    margin: 50px 0;
-}
-
-.info h2 {
-    color: #7B4A12;
-    font-size: 2.5em;
-}
-
-.info p {
-    font-size: 1.2em;
-    color: #6C757D;
-}
-
-/* Subscription Section */
-.subscribe {
-    text-align: center;
-    margin: 50px 0;
-}
-
-.subscribe input {
-    padding: 10px;
-    font-size: 1em;
-    margin-right: 10px;
-    border: 1px solid #CED4DA;
-    border-radius: 4px;
-}
-
-.subscribe button {
-    padding: 10px 20px;
-    background-color: #7B4A12;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.subscribe button:hover {
-    background-color: #5A3810;
-}
-
-/* Meal Suggestions */
+/* Container styling */
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: white;
+    background-color: #FFFFFF;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.container h2 {
-    color: #7B
+/* Heading styles */
+h1, h2 {
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], input[type="email"], button {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #CED4DA;
+    border-radius: 4px;
+}
+
+input[type="text"], input[type="email"] {
+    width: 100%;
+}
+
+button {
+    background-color: #007BFF;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Error message styling */
+#error-message {
+    color: #dc3545;
+    margin: 10px 0;
+}
+
+/* Image styling */
+img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+/* Footer styling */
+footer {
+    margin-top: 20px;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #007BFF;
+    color: #FFFFFF;
+    border-radius: 4px;
+}
